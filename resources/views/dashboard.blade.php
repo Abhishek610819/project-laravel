@@ -37,14 +37,23 @@
                         </button>
                     </form>
                 </div>
-      <div class="user">
+      {{-- <div class="user">
         <img src="https://i.pravatar.cc/40?img=2" />
-        <span>Louis Litt</span>
-      </div>
-      <div class="user">
+        <span>Louis Litt</span> --}}
+        @php
+    $users = \App\Models\User::all();
+@endphp
+    @foreach($users as $user)
+    <div class="user">
+        <span>{{ $user->name }}</span>
+    </div>
+@endforeach
+
+      {{-- </div> --}}
+      {{-- <div class="user">
         <img src="https://i.pravatar.cc/40?img=3" />
         <span>Harvey Specter</span>
-      </div>
+      </div> --}}
     </aside>
 
     <main class="chat-window">

@@ -1,6 +1,6 @@
 <?php
-
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/chat', [UserController::class, 'usersList']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
