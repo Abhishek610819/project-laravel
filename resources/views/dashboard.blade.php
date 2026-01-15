@@ -20,7 +20,13 @@
     <div class="chat-app">
     <aside class="sidebar">
       <div class="user active">
-        <img src="https://i.pravatar.cc/40?img=1" />
+        {{-- <img src="https://i.pravatar.cc/40?img=1" /> --}}
+        <img 
+    src="{{ auth()->user()->profile_image 
+        ? asset('storage/profiles/' . auth()->user()->profile_image) 
+        : asset('images/default-user.png') }}"
+    class="w-10 h-10 rounded-full">
+
         <span>
             <div>{{ Auth::user()->name }}</div></span>
              
@@ -45,6 +51,12 @@
 @endphp
     @foreach($users as $user)
     <div class="user">
+        <img 
+    src="{{ auth()->user()->profile_image 
+        ? asset('storage/profiles/' . auth()->user()->profile_image) 
+        : asset('images/default-user.png') }}"
+    class="w-10 h-10 rounded-full">
+
         <span>{{ $user->name }}</span>
     </div>
 @endforeach

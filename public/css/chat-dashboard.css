@@ -245,3 +245,8 @@ body {
   height: 40px;
   cursor: pointer;
 }
+.user.active img,
+.user img {
+    height: 20px;
+    width: 20px;
+}
